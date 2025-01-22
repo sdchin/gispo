@@ -1,33 +1,25 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import dog from './assets/puppy-dog.webp'
+import cat from './assets/cat.jpg' 
 import './App.css'
+import './assets/my-styles.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {/*<div className="grid">
+        <img src={viteLogo} className="logo" alt="Vite logo" />
+        <img src={reactLogo} className="logo react" alt="React logo" />
+      </div>*/}
+
+
+      <form action="https://summer-dew-970e.chin-steven10.workers.dev/" method="POST">
+      <label for="q1">Search query 1</label>
+      <input type="text" id="q1" name="q1" />
+      <input type="submit" value="Search" />
+      </form>
     </>
   )
 }
