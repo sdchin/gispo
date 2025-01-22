@@ -15,7 +15,7 @@ function App() {
       </div>*/}
 
 
-      <form action="https://summer-dew-970e.chin-steven10.workers.dev/" method="POST">
+      <form action="https://summer-dew-970e.chin-steven10.workers.dev/" method="GET">
       <label for="q1">Search query 1</label>
       <input type="text" id="q1" name="q1" />
       <input type="submit" value="Search" />
