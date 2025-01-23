@@ -5,9 +5,10 @@ import './assets/my-styles.css'
 import Image from './Image.jsx'
 import Gallery from './Gallery.jsx'
 import Form from './Form.jsx'
+import reactLogo from './assets/react.svg'
 
 function App() {
-  const [sources, setSources] = useState([]);
+  const [sources, setSources] = useState([reactLogo, reactLogo, reactLogo]);
   const [gallerySize, setGallerySize] = useState(3);
 
   async function handleSubmit(e) {

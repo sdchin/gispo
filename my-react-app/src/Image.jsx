@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import './assets/my-styles.css'
-import reactLogo from './assets/react.svg'
 
-export default function Image({ srcUrl }) {
+export default function Image({ srcUrl={reactLogo} }) {
   return (
     <img src={srcUrl} />
   );
