@@ -1,25 +1,31 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import dog from './assets/puppy-dog.webp'
-import cat from './assets/cat.jpg' 
-import './App.css'
+import { useEffect } from 'react';
+import './assets/App.css'
 import './assets/my-styles.css'
+import Image from './Image.jsx'
+import Gallery from './Gallery.jsx'
+import Form from './Form.jsx'
 
 function App() {
+  const [sources, setSources] = useState([]);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const urlSearchParams = new URLSearchParams(formData);
+    const queryString = urlSearchParams.toString();
+    const url = `${e.target.action}?${queryString}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    const dataArray = data.srcList;
+    setSources(dataArray);
+  };
+
   return (
     <>
-      {/*<div className="grid">
-        <img src={viteLogo} className="logo" alt="Vite logo" />
-        <img src={reactLogo} className="logo react" alt="React logo" />
-      </div>*/}
-
-
-      <form action="https://summer-dew-970e.chin-steven10.workers.dev/" method="GET">
-      <label for="q1">Search query 1</label>
-      <input type="text" id="q1" name="q1" />
-      <input type="submit" value="Search" />
-      </form>
+      <Gallery srcList={sources} />
+      
+      <Form handleSubmit={handleSubmit} />
     </>
   )
 }
