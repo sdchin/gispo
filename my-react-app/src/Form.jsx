@@ -1,7 +1,7 @@
 import './assets/my-styles.css'
 
 export default function Form({ handleSubmit }) {
-  const action = 'https://summer-dew-970e.chin-steven10.workers.dev/';
+  const action = 'gispo-api.sdchin.workers.dev';
   
   return (
     <form action={action} onSubmit={handleSubmit}>
