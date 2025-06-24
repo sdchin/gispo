@@ -6,6 +6,7 @@ import Image from './Image.jsx'
 import Gallery from './Gallery.jsx'
 import Form from './Form.jsx'
 import reactLogo from './assets/react.svg'
+import Options from './Options.jsx'
 
 function App() {
   const [sources, setSources] = useState([reactLogo, reactLogo, reactLogo]);
@@ -24,11 +25,18 @@ function App() {
     setSources(dataArray);
   };
 
+  function handleSizeChange(e) {
+    setGallerySize(parseInt(e.target.value));
+    
+  };
+
   return (
     <>
-      <Gallery srcList={sources} size={gallerySize} />
+      <Gallery srcList={sources} gallerySize={gallerySize} />
       
       <Form handleSubmit={handleSubmit} />
+
+      <Options handleSizeChange={handleSizeChange} />
     </>
   )
 }
