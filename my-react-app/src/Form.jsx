@@ -1,7 +1,7 @@
 import './assets/my-styles.css'
 
 export default function Form({ handleSubmit }) {
-  const action = 'gispo-api.sdchin.workers.dev';
+  const action = 'https://gispo-api.sdchin.workers.dev';
   
   return (
     <form action={action} onSubmit={handleSubmit}>
